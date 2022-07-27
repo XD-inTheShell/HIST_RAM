@@ -1,0 +1,29 @@
+	component SRAM_SC is
+		port (
+			clock_bridge_0_out_clk_clk                   : out std_logic;                                        -- clk
+			clk_clk                                      : in  std_logic                     := 'X';             -- clk
+			iopll_0_reset_reset                          : in  std_logic                     := 'X';             -- reset
+			iopll_0_locked_export                        : out std_logic;                                        -- export
+			master_0_master_reset_reset                  : out std_logic;                                        -- reset
+			master_0_master_address                      : out std_logic_vector(31 downto 0);                    -- address
+			master_0_master_readdata                     : in  std_logic_vector(31 downto 0) := (others => 'X'); -- readdata
+			master_0_master_read                         : out std_logic;                                        -- read
+			master_0_master_write                        : out std_logic;                                        -- write
+			master_0_master_writedata                    : out std_logic_vector(31 downto 0);                    -- writedata
+			master_0_master_waitrequest                  : in  std_logic                     := 'X';             -- waitrequest
+			master_0_master_readdatavalid                : in  std_logic                     := 'X';             -- readdatavalid
+			master_0_master_byteenable                   : out std_logic_vector(3 downto 0);                     -- byteenable
+			master_1_master_reset_reset                  : out std_logic;                                        -- reset
+			master_1_master_address                      : out std_logic_vector(31 downto 0);                    -- address
+			master_1_master_readdata                     : in  std_logic_vector(31 downto 0) := (others => 'X'); -- readdata
+			master_1_master_read                         : out std_logic;                                        -- read
+			master_1_master_write                        : out std_logic;                                        -- write
+			master_1_master_writedata                    : out std_logic_vector(31 downto 0);                    -- writedata
+			master_1_master_waitrequest                  : in  std_logic                     := 'X';             -- waitrequest
+			master_1_master_readdatavalid                : in  std_logic                     := 'X';             -- readdatavalid
+			master_1_master_byteenable                   : out std_logic_vector(3 downto 0);                     -- byteenable
+			reset_reset                                  : in  std_logic                     := 'X';             -- reset
+			s10_user_rst_clkgate_2_ninit_done_ninit_done : out std_logic                                         -- ninit_done
+		);
+	end component SRAM_SC;
+

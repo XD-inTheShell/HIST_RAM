@@ -1,0 +1,76 @@
+module top (
+    input clk
+);
+
+    logic rst;
+	 logic locked;
+    
+	 logic pll_clk, sys_rst, read, write, waitrequest, readdatavalid;
+	 logic readdatavalid_tmp;
+	 logic [31 : 0] address, readdata, writedata;
+	 
+	 assign waitrequest = 1'b0;
+	 
+	 always @(posedge clk) begin
+	     if (sys_rst) begin
+		      readdatavalid_tmp <= 1'b0;
+				readdatavalid <= 1'b0;
+        end else begin
+            readdatavalid_tmp <= read;
+		      readdatavalid <= readdatavalid_tmp;
+		  end
+	 end
+	 
+    ram1 u0 (
+        .data    (writedata),    //   input,  width = 32,    data.datain
+        .q       (readdata),       //  output,  width = 32,       q.dataout
+        .address (rendered_address), //   input,  width = 12, address.address
+        .wren    (write),    //   input,   width = 1,    wren.wren
+        .clock   (pll_clk)    //   input,   width = 1,   clock.clk
+    );
+    
+    logic m0_read, m0_write, m0_waitrequest, m0_readvalid;
+    assign m0_waitrequest = 1'b0;
+    assign m0_readvalid = 1'b1;
+    logic [31:0] rendered_regaddr, reg_readdata, m0_writedata;
+	assign rendered_regaddr = m0_addr>>2;
+    regfile r0 (
+        .clock(pll_clk), .ctrl_writeEnable(m0_write), .ctrl_reset(m0_sys_rst),
+        .ctrl_writeReg(rendered_regaddr), .ctrl_readRegA(rendered_regaddr), .ctrl_readRegB(),
+        .data_writeReg(m0_writedata),
+        .data_readRegA(reg_readdata), .data_readRegB()
+        );
+
+	
+	logic [31:0] rendered_address;
+	assign rendered_address = address>>2;
+    SRAM_SC periph (
+        .clock_bridge_0_out_clk_clk                   (pll_clk),                   //  output,   width = 1,            clock_bridge_0_out_clk.clk
+        .clk_clk                                      (clk),                                      //   input,   width = 1,                               clk.clk
+        .iopll_0_reset_reset                          (rst),                          //   input,   width = 1,                     iopll_0_reset.reset
+        .iopll_0_locked_export                        (locked),                        //  output,   width = 1,                    iopll_0_locked.export
+        .master_1_master_reset_reset                  (sys_rst),                  //  output,   width = 1,             master_1_master_reset.reset
+        .master_1_master_address                      (address),                      //  output,  width = 32,                   master_1_master.address
+        .master_1_master_readdata                     (readdata),                     //   input,  width = 32,                                  .readdata
+        .master_1_master_read                         (read),                         //  output,   width = 1,                                  .read
+        .master_1_master_write                        (write),                        //  output,   width = 1,                                  .write
+        .master_1_master_writedata                    (writedata),                    //  output,  width = 32,                                  .writedata
+        .master_1_master_waitrequest                  (waitrequest),                  //   input,   width = 1,                                  .waitrequest
+        .master_1_master_readdatavalid                (readdatavalid),                //   input,   width = 1,                                  .readdatavalid
+        .master_1_master_byteenable                   (),                   //  output,   width = 4,                                  .byteenable
+        .reset_reset                                  (~locked),                                  //   input,   width = 1,                             reset.reset
+        .s10_user_rst_clkgate_2_ninit_done_ninit_done (rst)  //  output,   width = 1, s10_user_rst_clkgate_2_ninit_done.ninit_done
+        //master_0 connected to Regfile
+        .master_0_master_reset_reset                  (m0_sys_rst),                  //  output,   width = 1,             master_0_master_reset.reset
+        .master_0_master_address                      (m0_addr),                      //  output,  width = 32,                   master_0_master.address
+        .master_0_master_readdata                     (reg_readdata),                     //   input,  width = 32,                                  .readdata
+        .master_0_master_read                         (m0_read),                         //  output,   width = 1,                                  .read
+        .master_0_master_write                        (m0_write),                        //  output,   width = 1,                                  .write
+        .master_0_master_writedata                    (m0_writedata),                    //  output,  width = 32,                                  .writedata
+        .master_0_master_waitrequest                  (m0_waitrequest),                  //   input,   width = 1,                                  .waitrequest
+        .master_0_master_readdatavalid                (m0_readvalid),                //   input,   width = 1,                                  .readdatavalid
+        .master_0_master_byteenable                   ()                    //  output,   width = 4,                                  .byteenable
+        );
+
+
+endmodule: top

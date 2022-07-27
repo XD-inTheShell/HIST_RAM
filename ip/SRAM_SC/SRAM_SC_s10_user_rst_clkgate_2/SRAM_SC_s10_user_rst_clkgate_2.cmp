@@ -1,0 +1,6 @@
+	component SRAM_SC_s10_user_rst_clkgate_2 is
+		port (
+			ninit_done : out std_logic   -- ninit_done
+		);
+	end component SRAM_SC_s10_user_rst_clkgate_2;
+

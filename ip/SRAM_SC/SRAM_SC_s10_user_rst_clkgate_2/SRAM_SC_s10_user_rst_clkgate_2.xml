@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<deploy
+ date="2022.07.25.13:26:04"
+ outputDirectory="/home/xiyingd/HIST_RAM_MEMTEST/ip/SRAM_SC/SRAM_SC_s10_user_rst_clkgate_2/">
+ <perimeter>
+  <parameter
+     name="AUTO_GENERATION_ID"
+     type="Integer"
+     defaultValue="0"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_UNIQUE_ID"
+     type="String"
+     defaultValue=""
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE_FAMILY"
+     type="String"
+     defaultValue="Stratix 10"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE"
+     type="String"
+     defaultValue="1SM21CHU2F53E2VG"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE_SPEEDGRADE"
+     type="String"
+     defaultValue="2"
+     onHdl="0"
+     affectsHdl="1" />
+  <interface name="ninit_done" kind="conduit" start="0">
+   <property name="associatedClock" value="" />
+   <property name="associatedReset" value="" />
+   <property name="prSafe" value="false" />
+   <port name="ninit_done" direction="output" role="ninit_done" width="1" />
+  </interface>
+ </perimeter>
+ <entity
+   kind="SRAM_SC_s10_user_rst_clkgate_2"
+   version="1.0"
+   name="SRAM_SC_s10_user_rst_clkgate_2">
+  <parameter name="AUTO_GENERATION_ID" value="0" />
+  <parameter name="AUTO_DEVICE" value="1SM21CHU2F53E2VG" />
+  <parameter name="AUTO_DEVICE_FAMILY" value="Stratix 10" />
+  <parameter name="AUTO_UNIQUE_ID" value="" />
+  <parameter name="AUTO_DEVICE_SPEEDGRADE" value="2" />
+  <generatedFiles>
+   <file
+       path="/home/xiyingd/HIST_RAM_MEMTEST/ip/SRAM_SC/SRAM_SC_s10_user_rst_clkgate_2/synth/SRAM_SC_s10_user_rst_clkgate_2.v"
+       attributes="CONTAINS_INLINE_CONFIGURATION" />
+  </generatedFiles>
+  <childGeneratedFiles>
+   <file
+       path="/home/xiyingd/HIST_RAM_MEMTEST/ip/SRAM_SC/SRAM_SC_s10_user_rst_clkgate_2/synth/SRAM_SC_s10_user_rst_clkgate_2.v"
+       attributes="CONTAINS_INLINE_CONFIGURATION" />
+  </childGeneratedFiles>
+  <sourceFiles>
+   <file
+       path="/home/xiyingd/HIST_RAM_MEMTEST/ip/SRAM_SC/SRAM_SC_s10_user_rst_clkgate_2.ip" />
+  </sourceFiles>
+  <childSourceFiles>
+   <file
+       path="/home/Programs/intelFPGA_pro/19.4/ip/altera/pgm/altera_s10_user_rst_clkgate/altera_s10_user_rst_clkgate_hw.tcl" />
+  </childSourceFiles>
+  <messages>
+   <message level="Info" culprit="SRAM_SC_s10_user_rst_clkgate_2">"Generating: SRAM_SC_s10_user_rst_clkgate_2"</message>
+   <message level="Info" culprit="SRAM_SC_s10_user_rst_clkgate_2">"Generating: altera_s10_user_rst_clkgate"</message>
+  </messages>
+ </entity>
+ <entity
+   kind="altera_s10_user_rst_clkgate"
+   version="19.1.0"
+   name="altera_s10_user_rst_clkgate">
+  <generatedFiles>
+   <file
+       path="/home/xiyingd/HIST_RAM_MEMTEST/ip/SRAM_SC/SRAM_SC_s10_user_rst_clkgate_2/altera_s10_user_rst_clkgate_1910/synth/altera_s10_user_rst_clkgate.sv"
+       attributes="TOP_LEVEL_FILE" />
+  </generatedFiles>
+  <childGeneratedFiles>
+   <file
+       path="/home/xiyingd/HIST_RAM_MEMTEST/ip/SRAM_SC/SRAM_SC_s10_user_rst_clkgate_2/altera_s10_user_rst_clkgate_1910/synth/altera_s10_user_rst_clkgate.sv"
+       attributes="TOP_LEVEL_FILE" />
+  </childGeneratedFiles>
+  <sourceFiles>
+   <file
+       path="/home/Programs/intelFPGA_pro/19.4/ip/altera/pgm/altera_s10_user_rst_clkgate/altera_s10_user_rst_clkgate_hw.tcl" />
+  </sourceFiles>
+  <childSourceFiles/>
+  <instantiator
+     instantiator="SRAM_SC_s10_user_rst_clkgate_2"
+     as="s10_user_rst_clkgate_2" />
+  <messages>
+   <message level="Info" culprit="SRAM_SC_s10_user_rst_clkgate_2">"Generating: altera_s10_user_rst_clkgate"</message>
+  </messages>
+ </entity>
+</deploy>

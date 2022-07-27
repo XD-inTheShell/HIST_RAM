@@ -1,0 +1,326 @@
+Restore Archived Project report for SRAM_SC
+Mon Jul 25 12:41:46 2022
+Quartus Prime Version 19.4.0 Build 64 12/04/2019 Patches 0.29 SC Pro Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Restore Archived Project Summary
+  3. Restore Archived Project Messages
+  4. Files Restored
+  5. Files Not Restored
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2019  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++-------------------------------------------------------------------------+
+; Restore Archived Project Summary                                        ;
++---------------------------------+---------------------------------------+
+; Restore Archived Project Status ; Successful - Mon Jul 25 12:41:46 2022 ;
+; Revision Name                   ; SRAM_SC                               ;
+; Top-level Entity Name           ; top                                   ;
+; Family                          ; Stratix 10                            ;
++---------------------------------+---------------------------------------+
+
+
++-----------------------------------+
+; Restore Archived Project Messages ;
++-----------------------------------+
+Info: Extracted '/home/xiyingd/SRAM_SC/SRAM_SC_tmp_archive.qar' into the '/home/xiyingd/HIST_RAM_MEMTEST/' directory
+Info: Generated report 'SRAM_SC.restore.rpt'
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------+
+; Files Restored                                                                                                                                   ;
++--------------------------------------------------------------------------------------------------------------------------------------------------+
+; File Name                                                                                                                                        ;
++--------------------------------------------------------------------------------------------------------------------------------------------------+
+; qar_info.json                                                                                                                                    ;
+; assignment_defaults.qdf                                                                                                                          ;
+; SRAM_SC.qpf                                                                                                                                      ;
+; SRAM_SC.qsf                                                                                                                                      ;
+; SRAM_SC.qsys                                                                                                                                     ;
+; SRAM_SC/SRAM_SC.bsf                                                                                                                              ;
+; SRAM_SC/SRAM_SC.cmp                                                                                                                              ;
+; SRAM_SC/SRAM_SC.html                                                                                                                             ;
+; SRAM_SC/SRAM_SC.qgsynthc                                                                                                                         ;
+; SRAM_SC/SRAM_SC.qip                                                                                                                              ;
+; SRAM_SC/SRAM_SC.sopcinfo                                                                                                                         ;
+; SRAM_SC/SRAM_SC.xml                                                                                                                              ;
+; SRAM_SC/SRAM_SC_bb.v                                                                                                                             ;
+; SRAM_SC/SRAM_SC_generation.rpt                                                                                                                   ;
+; SRAM_SC/SRAM_SC_generation_previous.rpt                                                                                                          ;
+; SRAM_SC/SRAM_SC_inst.v                                                                                                                           ;
+; SRAM_SC/SRAM_SC_inst.vhd                                                                                                                         ;
+; SRAM_SC/altera_merlin_master_translator_191/synth/SRAM_SC_altera_merlin_master_translator_191_g7h47bq.sv                                         ;
+; SRAM_SC/altera_merlin_slave_translator_191/synth/SRAM_SC_altera_merlin_slave_translator_191_x56fcki.sv                                           ;
+; SRAM_SC/altera_mm_interconnect_191/synth/SRAM_SC_altera_mm_interconnect_191_2ybspzq.v                                                            ;
+; SRAM_SC/altera_mm_interconnect_191/synth/SRAM_SC_altera_mm_interconnect_191_542jpwy.v                                                            ;
+; SRAM_SC/altera_mm_interconnect_191/synth/SRAM_SC_altera_mm_interconnect_191_mfi3nlq.v                                                            ;
+; SRAM_SC/altera_reset_controller_191/synth/altera_reset_controller.sdc                                                                            ;
+; SRAM_SC/altera_reset_controller_191/synth/altera_reset_controller.v                                                                              ;
+; SRAM_SC/altera_reset_controller_191/synth/altera_reset_synchronizer.v                                                                            ;
+; SRAM_SC/synth/SRAM_SC.v                                                                                                                          ;
+; init.tcl                                                                                                                                         ;
+; ip/SRAM_SC/SRAM_SC_clock_bridge_0.ip                                                                                                             ;
+; ip/SRAM_SC/SRAM_SC_clock_bridge_0/SRAM_SC_clock_bridge_0.bsf                                                                                     ;
+; ip/SRAM_SC/SRAM_SC_clock_bridge_0/SRAM_SC_clock_bridge_0.cmp                                                                                     ;
+; ip/SRAM_SC/SRAM_SC_clock_bridge_0/SRAM_SC_clock_bridge_0.html                                                                                    ;
+; ip/SRAM_SC/SRAM_SC_clock_bridge_0/SRAM_SC_clock_bridge_0.qgsynthc                                                                                ;
+; ip/SRAM_SC/SRAM_SC_clock_bridge_0/SRAM_SC_clock_bridge_0.qip                                                                                     ;
+; ip/SRAM_SC/SRAM_SC_clock_bridge_0/SRAM_SC_clock_bridge_0.sopcinfo                                                                                ;
+; ip/SRAM_SC/SRAM_SC_clock_bridge_0/SRAM_SC_clock_bridge_0.xml                                                                                     ;
+; ip/SRAM_SC/SRAM_SC_clock_bridge_0/SRAM_SC_clock_bridge_0_bb.v                                                                                    ;
+; ip/SRAM_SC/SRAM_SC_clock_bridge_0/SRAM_SC_clock_bridge_0_generation.rpt                                                                          ;
+; ip/SRAM_SC/SRAM_SC_clock_bridge_0/SRAM_SC_clock_bridge_0_generation_previous.rpt                                                                 ;
+; ip/SRAM_SC/SRAM_SC_clock_bridge_0/SRAM_SC_clock_bridge_0_inst.v                                                                                  ;
+; ip/SRAM_SC/SRAM_SC_clock_bridge_0/SRAM_SC_clock_bridge_0_inst.vhd                                                                                ;
+; ip/SRAM_SC/SRAM_SC_clock_bridge_0/synth/SRAM_SC_clock_bridge_0.v                                                                                 ;
+; ip/SRAM_SC/SRAM_SC_clock_in.ip                                                                                                                   ;
+; ip/SRAM_SC/SRAM_SC_clock_in/SRAM_SC_clock_in.bsf                                                                                                 ;
+; ip/SRAM_SC/SRAM_SC_clock_in/SRAM_SC_clock_in.cmp                                                                                                 ;
+; ip/SRAM_SC/SRAM_SC_clock_in/SRAM_SC_clock_in.html                                                                                                ;
+; ip/SRAM_SC/SRAM_SC_clock_in/SRAM_SC_clock_in.qgsynthc                                                                                            ;
+; ip/SRAM_SC/SRAM_SC_clock_in/SRAM_SC_clock_in.qip                                                                                                 ;
+; ip/SRAM_SC/SRAM_SC_clock_in/SRAM_SC_clock_in.sopcinfo                                                                                            ;
+; ip/SRAM_SC/SRAM_SC_clock_in/SRAM_SC_clock_in.xml                                                                                                 ;
+; ip/SRAM_SC/SRAM_SC_clock_in/SRAM_SC_clock_in_bb.v                                                                                                ;
+; ip/SRAM_SC/SRAM_SC_clock_in/SRAM_SC_clock_in_generation.rpt                                                                                      ;
+; ip/SRAM_SC/SRAM_SC_clock_in/SRAM_SC_clock_in_generation_previous.rpt                                                                             ;
+; ip/SRAM_SC/SRAM_SC_clock_in/SRAM_SC_clock_in_inst.v                                                                                              ;
+; ip/SRAM_SC/SRAM_SC_clock_in/SRAM_SC_clock_in_inst.vhd                                                                                            ;
+; ip/SRAM_SC/SRAM_SC_clock_in/synth/SRAM_SC_clock_in.v                                                                                             ;
+; ip/SRAM_SC/SRAM_SC_iopll_0.ip                                                                                                                    ;
+; ip/SRAM_SC/SRAM_SC_iopll_0/SRAM_SC_iopll_0.bsf                                                                                                   ;
+; ip/SRAM_SC/SRAM_SC_iopll_0/SRAM_SC_iopll_0.cmp                                                                                                   ;
+; ip/SRAM_SC/SRAM_SC_iopll_0/SRAM_SC_iopll_0.html                                                                                                  ;
+; ip/SRAM_SC/SRAM_SC_iopll_0/SRAM_SC_iopll_0.qgsynthc                                                                                              ;
+; ip/SRAM_SC/SRAM_SC_iopll_0/SRAM_SC_iopll_0.qip                                                                                                   ;
+; ip/SRAM_SC/SRAM_SC_iopll_0/SRAM_SC_iopll_0.sopcinfo                                                                                              ;
+; ip/SRAM_SC/SRAM_SC_iopll_0/SRAM_SC_iopll_0.xml                                                                                                   ;
+; ip/SRAM_SC/SRAM_SC_iopll_0/SRAM_SC_iopll_0_bb.v                                                                                                  ;
+; ip/SRAM_SC/SRAM_SC_iopll_0/SRAM_SC_iopll_0_generation.rpt                                                                                        ;
+; ip/SRAM_SC/SRAM_SC_iopll_0/SRAM_SC_iopll_0_generation_previous.rpt                                                                               ;
+; ip/SRAM_SC/SRAM_SC_iopll_0/SRAM_SC_iopll_0_inst.v                                                                                                ;
+; ip/SRAM_SC/SRAM_SC_iopll_0/SRAM_SC_iopll_0_inst.vhd                                                                                              ;
+; ip/SRAM_SC/SRAM_SC_iopll_0/altera_iopll_1930/synth/SRAM_SC_iopll_0_altera_iopll_1930_qazux7i.sdc                                                 ;
+; ip/SRAM_SC/SRAM_SC_iopll_0/altera_iopll_1930/synth/SRAM_SC_iopll_0_altera_iopll_1930_qazux7i.v                                                   ;
+; ip/SRAM_SC/SRAM_SC_iopll_0/altera_iopll_1930/synth/SRAM_SC_iopll_0_altera_iopll_1930_qazux7i_parameters.tcl                                      ;
+; ip/SRAM_SC/SRAM_SC_iopll_0/altera_iopll_1930/synth/SRAM_SC_iopll_0_altera_iopll_1930_qazux7i_pin_map.tcl                                         ;
+; ip/SRAM_SC/SRAM_SC_iopll_0/altera_iopll_1930/synth/stratix10_altera_iopll.v                                                                      ;
+; ip/SRAM_SC/SRAM_SC_iopll_0/synth/SRAM_SC_iopll_0.v                                                                                               ;
+; ip/SRAM_SC/SRAM_SC_master_1.ip                                                                                                                   ;
+; ip/SRAM_SC/SRAM_SC_master_1/SRAM_SC_master_1.bsf                                                                                                 ;
+; ip/SRAM_SC/SRAM_SC_master_1/SRAM_SC_master_1.cmp                                                                                                 ;
+; ip/SRAM_SC/SRAM_SC_master_1/SRAM_SC_master_1.html                                                                                                ;
+; ip/SRAM_SC/SRAM_SC_master_1/SRAM_SC_master_1.qgsynthc                                                                                            ;
+; ip/SRAM_SC/SRAM_SC_master_1/SRAM_SC_master_1.qip                                                                                                 ;
+; ip/SRAM_SC/SRAM_SC_master_1/SRAM_SC_master_1.sopcinfo                                                                                            ;
+; ip/SRAM_SC/SRAM_SC_master_1/SRAM_SC_master_1.xml                                                                                                 ;
+; ip/SRAM_SC/SRAM_SC_master_1/SRAM_SC_master_1_bb.v                                                                                                ;
+; ip/SRAM_SC/SRAM_SC_master_1/SRAM_SC_master_1_generation.rpt                                                                                      ;
+; ip/SRAM_SC/SRAM_SC_master_1/SRAM_SC_master_1_generation_previous.rpt                                                                             ;
+; ip/SRAM_SC/SRAM_SC_master_1/SRAM_SC_master_1_inst.v                                                                                              ;
+; ip/SRAM_SC/SRAM_SC_master_1/SRAM_SC_master_1_inst.vhd                                                                                            ;
+; ip/SRAM_SC/SRAM_SC_master_1/altera_avalon_packets_to_master_1910/synth/altera_avalon_packets_to_master.v                                         ;
+; ip/SRAM_SC/SRAM_SC_master_1/altera_avalon_sc_fifo_191/synth/SRAM_SC_master_1_altera_avalon_sc_fifo_191_e5eqkcq.v                                 ;
+; ip/SRAM_SC/SRAM_SC_master_1/altera_avalon_st_bytes_to_packets_1910/synth/altera_avalon_st_bytes_to_packets.v                                     ;
+; ip/SRAM_SC/SRAM_SC_master_1/altera_avalon_st_packets_to_bytes_1910/synth/altera_avalon_st_packets_to_bytes.v                                     ;
+; ip/SRAM_SC/SRAM_SC_master_1/altera_jtag_avalon_master_191/synth/SRAM_SC_master_1_altera_jtag_avalon_master_191_3zppvky.v                         ;
+; ip/SRAM_SC/SRAM_SC_master_1/altera_jtag_dc_streaming_191/synth/altera_avalon_st_clock_crosser.v                                                  ;
+; ip/SRAM_SC/SRAM_SC_master_1/altera_jtag_dc_streaming_191/synth/altera_avalon_st_idle_inserter.v                                                  ;
+; ip/SRAM_SC/SRAM_SC_master_1/altera_jtag_dc_streaming_191/synth/altera_avalon_st_idle_remover.v                                                   ;
+; ip/SRAM_SC/SRAM_SC_master_1/altera_jtag_dc_streaming_191/synth/altera_avalon_st_jtag_interface.sdc                                               ;
+; ip/SRAM_SC/SRAM_SC_master_1/altera_jtag_dc_streaming_191/synth/altera_avalon_st_jtag_interface.v                                                 ;
+; ip/SRAM_SC/SRAM_SC_master_1/altera_jtag_dc_streaming_191/synth/altera_avalon_st_pipeline_base.v                                                  ;
+; ip/SRAM_SC/SRAM_SC_master_1/altera_jtag_dc_streaming_191/synth/altera_avalon_st_pipeline_stage.sv                                                ;
+; ip/SRAM_SC/SRAM_SC_master_1/altera_jtag_dc_streaming_191/synth/altera_jtag_dc_streaming.v                                                        ;
+; ip/SRAM_SC/SRAM_SC_master_1/altera_jtag_dc_streaming_191/synth/altera_jtag_sld_node.v                                                            ;
+; ip/SRAM_SC/SRAM_SC_master_1/altera_jtag_dc_streaming_191/synth/altera_jtag_streaming.v                                                           ;
+; ip/SRAM_SC/SRAM_SC_master_1/altera_jtag_dc_streaming_191/synth/altera_std_synchronizer_nocut.v                                                   ;
+; ip/SRAM_SC/SRAM_SC_master_1/altera_reset_controller_191/synth/altera_reset_controller.sdc                                                        ;
+; ip/SRAM_SC/SRAM_SC_master_1/altera_reset_controller_191/synth/altera_reset_controller.v                                                          ;
+; ip/SRAM_SC/SRAM_SC_master_1/altera_reset_controller_191/synth/altera_reset_synchronizer.v                                                        ;
+; ip/SRAM_SC/SRAM_SC_master_1/channel_adapter_191/synth/SRAM_SC_master_1_channel_adapter_191_cco4x3a.sv                                            ;
+; ip/SRAM_SC/SRAM_SC_master_1/channel_adapter_191/synth/SRAM_SC_master_1_channel_adapter_191_uc27kqq.sv                                            ;
+; ip/SRAM_SC/SRAM_SC_master_1/synth/SRAM_SC_master_1.v                                                                                             ;
+; ip/SRAM_SC/SRAM_SC_master_1/timing_adapter_191/synth/SRAM_SC_master_1_timing_adapter_191_rrgemwi.sv                                              ;
+; ip/SRAM_SC/SRAM_SC_onchip_memory2_1.ip                                                                                                           ;
+; ip/SRAM_SC/SRAM_SC_onchip_memory2_1/SRAM_SC_onchip_memory2_1.bsf                                                                                 ;
+; ip/SRAM_SC/SRAM_SC_onchip_memory2_1/SRAM_SC_onchip_memory2_1.cmp                                                                                 ;
+; ip/SRAM_SC/SRAM_SC_onchip_memory2_1/SRAM_SC_onchip_memory2_1.html                                                                                ;
+; ip/SRAM_SC/SRAM_SC_onchip_memory2_1/SRAM_SC_onchip_memory2_1.qgsynthc                                                                            ;
+; ip/SRAM_SC/SRAM_SC_onchip_memory2_1/SRAM_SC_onchip_memory2_1.qip                                                                                 ;
+; ip/SRAM_SC/SRAM_SC_onchip_memory2_1/SRAM_SC_onchip_memory2_1.sopcinfo                                                                            ;
+; ip/SRAM_SC/SRAM_SC_onchip_memory2_1/SRAM_SC_onchip_memory2_1.xml                                                                                 ;
+; ip/SRAM_SC/SRAM_SC_onchip_memory2_1/SRAM_SC_onchip_memory2_1_bb.v                                                                                ;
+; ip/SRAM_SC/SRAM_SC_onchip_memory2_1/SRAM_SC_onchip_memory2_1_generation.rpt                                                                      ;
+; ip/SRAM_SC/SRAM_SC_onchip_memory2_1/SRAM_SC_onchip_memory2_1_generation_previous.rpt                                                             ;
+; ip/SRAM_SC/SRAM_SC_onchip_memory2_1/SRAM_SC_onchip_memory2_1_inst.v                                                                              ;
+; ip/SRAM_SC/SRAM_SC_onchip_memory2_1/SRAM_SC_onchip_memory2_1_inst.vhd                                                                            ;
+; ip/SRAM_SC/SRAM_SC_onchip_memory2_1/altera_avalon_onchip_memory2_1920/synth/SRAM_SC_onchip_memory2_1_altera_avalon_onchip_memory2_1920_dgzafpq.v ;
+; ip/SRAM_SC/SRAM_SC_onchip_memory2_1/altera_avalon_onchip_memory2_1920/synth/SRAM_SC_onchip_memory2_1_onchip_memory2_1.hex                        ;
+; ip/SRAM_SC/SRAM_SC_onchip_memory2_1/synth/SRAM_SC_onchip_memory2_1.v                                                                             ;
+; ip/SRAM_SC/SRAM_SC_ram_1port_0.ip                                                                                                                ;
+; ip/SRAM_SC/SRAM_SC_ram_1port_0/SRAM_SC_ram_1port_0.bsf                                                                                           ;
+; ip/SRAM_SC/SRAM_SC_ram_1port_0/SRAM_SC_ram_1port_0.cmp                                                                                           ;
+; ip/SRAM_SC/SRAM_SC_ram_1port_0/SRAM_SC_ram_1port_0.html                                                                                          ;
+; ip/SRAM_SC/SRAM_SC_ram_1port_0/SRAM_SC_ram_1port_0.qgsynthc                                                                                      ;
+; ip/SRAM_SC/SRAM_SC_ram_1port_0/SRAM_SC_ram_1port_0.qip                                                                                           ;
+; ip/SRAM_SC/SRAM_SC_ram_1port_0/SRAM_SC_ram_1port_0.sopcinfo                                                                                      ;
+; ip/SRAM_SC/SRAM_SC_ram_1port_0/SRAM_SC_ram_1port_0.xml                                                                                           ;
+; ip/SRAM_SC/SRAM_SC_ram_1port_0/SRAM_SC_ram_1port_0_bb.v                                                                                          ;
+; ip/SRAM_SC/SRAM_SC_ram_1port_0/SRAM_SC_ram_1port_0_generation.rpt                                                                                ;
+; ip/SRAM_SC/SRAM_SC_ram_1port_0/SRAM_SC_ram_1port_0_generation_previous.rpt                                                                       ;
+; ip/SRAM_SC/SRAM_SC_ram_1port_0/SRAM_SC_ram_1port_0_inst.v                                                                                        ;
+; ip/SRAM_SC/SRAM_SC_ram_1port_0/SRAM_SC_ram_1port_0_inst.vhd                                                                                      ;
+; ip/SRAM_SC/SRAM_SC_ram_1port_0/ram_1port_2000/synth/SRAM_SC_ram_1port_0_ram_1port_2000_aotolga.v                                                 ;
+; ip/SRAM_SC/SRAM_SC_ram_1port_0/synth/SRAM_SC_ram_1port_0.v                                                                                       ;
+; ip/SRAM_SC/SRAM_SC_reset_in.ip                                                                                                                   ;
+; ip/SRAM_SC/SRAM_SC_reset_in/SRAM_SC_reset_in.bsf                                                                                                 ;
+; ip/SRAM_SC/SRAM_SC_reset_in/SRAM_SC_reset_in.cmp                                                                                                 ;
+; ip/SRAM_SC/SRAM_SC_reset_in/SRAM_SC_reset_in.html                                                                                                ;
+; ip/SRAM_SC/SRAM_SC_reset_in/SRAM_SC_reset_in.qgsynthc                                                                                            ;
+; ip/SRAM_SC/SRAM_SC_reset_in/SRAM_SC_reset_in.qip                                                                                                 ;
+; ip/SRAM_SC/SRAM_SC_reset_in/SRAM_SC_reset_in.sopcinfo                                                                                            ;
+; ip/SRAM_SC/SRAM_SC_reset_in/SRAM_SC_reset_in.xml                                                                                                 ;
+; ip/SRAM_SC/SRAM_SC_reset_in/SRAM_SC_reset_in_bb.v                                                                                                ;
+; ip/SRAM_SC/SRAM_SC_reset_in/SRAM_SC_reset_in_generation.rpt                                                                                      ;
+; ip/SRAM_SC/SRAM_SC_reset_in/SRAM_SC_reset_in_generation_previous.rpt                                                                             ;
+; ip/SRAM_SC/SRAM_SC_reset_in/SRAM_SC_reset_in_inst.v                                                                                              ;
+; ip/SRAM_SC/SRAM_SC_reset_in/SRAM_SC_reset_in_inst.vhd                                                                                            ;
+; ip/SRAM_SC/SRAM_SC_reset_in/synth/SRAM_SC_reset_in.v                                                                                             ;
+; ip/SRAM_SC/SRAM_SC_s10_user_rst_clkgate_0.ip                                                                                                     ;
+; ip/SRAM_SC/SRAM_SC_s10_user_rst_clkgate_0/SRAM_SC_s10_user_rst_clkgate_0.bsf                                                                     ;
+; ip/SRAM_SC/SRAM_SC_s10_user_rst_clkgate_0/SRAM_SC_s10_user_rst_clkgate_0.cmp                                                                     ;
+; ip/SRAM_SC/SRAM_SC_s10_user_rst_clkgate_0/SRAM_SC_s10_user_rst_clkgate_0.html                                                                    ;
+; ip/SRAM_SC/SRAM_SC_s10_user_rst_clkgate_0/SRAM_SC_s10_user_rst_clkgate_0.qgsynthc                                                                ;
+; ip/SRAM_SC/SRAM_SC_s10_user_rst_clkgate_0/SRAM_SC_s10_user_rst_clkgate_0.qip                                                                     ;
+; ip/SRAM_SC/SRAM_SC_s10_user_rst_clkgate_0/SRAM_SC_s10_user_rst_clkgate_0.sopcinfo                                                                ;
+; ip/SRAM_SC/SRAM_SC_s10_user_rst_clkgate_0/SRAM_SC_s10_user_rst_clkgate_0.xml                                                                     ;
+; ip/SRAM_SC/SRAM_SC_s10_user_rst_clkgate_0/SRAM_SC_s10_user_rst_clkgate_0_bb.v                                                                    ;
+; ip/SRAM_SC/SRAM_SC_s10_user_rst_clkgate_0/SRAM_SC_s10_user_rst_clkgate_0_generation.rpt                                                          ;
+; ip/SRAM_SC/SRAM_SC_s10_user_rst_clkgate_0/SRAM_SC_s10_user_rst_clkgate_0_inst.v                                                                  ;
+; ip/SRAM_SC/SRAM_SC_s10_user_rst_clkgate_0/SRAM_SC_s10_user_rst_clkgate_0_inst.vhd                                                                ;
+; ip/SRAM_SC/SRAM_SC_s10_user_rst_clkgate_0/altera_s10_user_rst_clkgate_1910/synth/altera_s10_user_rst_clkgate.sv                                  ;
+; ip/SRAM_SC/SRAM_SC_s10_user_rst_clkgate_0/synth/SRAM_SC_s10_user_rst_clkgate_0.v                                                                 ;
+; ip/SRAM_SC/SRAM_SC_s10_user_rst_clkgate_1.ip                                                                                                     ;
+; ip/SRAM_SC/SRAM_SC_s10_user_rst_clkgate_1/SRAM_SC_s10_user_rst_clkgate_1.bsf                                                                     ;
+; ip/SRAM_SC/SRAM_SC_s10_user_rst_clkgate_1/SRAM_SC_s10_user_rst_clkgate_1.cmp                                                                     ;
+; ip/SRAM_SC/SRAM_SC_s10_user_rst_clkgate_1/SRAM_SC_s10_user_rst_clkgate_1.html                                                                    ;
+; ip/SRAM_SC/SRAM_SC_s10_user_rst_clkgate_1/SRAM_SC_s10_user_rst_clkgate_1.qgsynthc                                                                ;
+; ip/SRAM_SC/SRAM_SC_s10_user_rst_clkgate_1/SRAM_SC_s10_user_rst_clkgate_1.qip                                                                     ;
+; ip/SRAM_SC/SRAM_SC_s10_user_rst_clkgate_1/SRAM_SC_s10_user_rst_clkgate_1.sopcinfo                                                                ;
+; ip/SRAM_SC/SRAM_SC_s10_user_rst_clkgate_1/SRAM_SC_s10_user_rst_clkgate_1.xml                                                                     ;
+; ip/SRAM_SC/SRAM_SC_s10_user_rst_clkgate_1/SRAM_SC_s10_user_rst_clkgate_1_bb.v                                                                    ;
+; ip/SRAM_SC/SRAM_SC_s10_user_rst_clkgate_1/SRAM_SC_s10_user_rst_clkgate_1_generation.rpt                                                          ;
+; ip/SRAM_SC/SRAM_SC_s10_user_rst_clkgate_1/SRAM_SC_s10_user_rst_clkgate_1_inst.v                                                                  ;
+; ip/SRAM_SC/SRAM_SC_s10_user_rst_clkgate_1/SRAM_SC_s10_user_rst_clkgate_1_inst.vhd                                                                ;
+; ip/SRAM_SC/SRAM_SC_s10_user_rst_clkgate_1/altera_s10_user_rst_clkgate_1910/synth/altera_s10_user_rst_clkgate.sv                                  ;
+; ip/SRAM_SC/SRAM_SC_s10_user_rst_clkgate_1/synth/SRAM_SC_s10_user_rst_clkgate_1.v                                                                 ;
+; ip/SRAM_SC/SRAM_SC_s10_user_rst_clkgate_2.ip                                                                                                     ;
+; ip/SRAM_SC/SRAM_SC_s10_user_rst_clkgate_2/SRAM_SC_s10_user_rst_clkgate_2.bsf                                                                     ;
+; ip/SRAM_SC/SRAM_SC_s10_user_rst_clkgate_2/SRAM_SC_s10_user_rst_clkgate_2.cmp                                                                     ;
+; ip/SRAM_SC/SRAM_SC_s10_user_rst_clkgate_2/SRAM_SC_s10_user_rst_clkgate_2.html                                                                    ;
+; ip/SRAM_SC/SRAM_SC_s10_user_rst_clkgate_2/SRAM_SC_s10_user_rst_clkgate_2.qgsynthc                                                                ;
+; ip/SRAM_SC/SRAM_SC_s10_user_rst_clkgate_2/SRAM_SC_s10_user_rst_clkgate_2.qip                                                                     ;
+; ip/SRAM_SC/SRAM_SC_s10_user_rst_clkgate_2/SRAM_SC_s10_user_rst_clkgate_2.sopcinfo                                                                ;
+; ip/SRAM_SC/SRAM_SC_s10_user_rst_clkgate_2/SRAM_SC_s10_user_rst_clkgate_2.xml                                                                     ;
+; ip/SRAM_SC/SRAM_SC_s10_user_rst_clkgate_2/SRAM_SC_s10_user_rst_clkgate_2_bb.v                                                                    ;
+; ip/SRAM_SC/SRAM_SC_s10_user_rst_clkgate_2/SRAM_SC_s10_user_rst_clkgate_2_generation.rpt                                                          ;
+; ip/SRAM_SC/SRAM_SC_s10_user_rst_clkgate_2/SRAM_SC_s10_user_rst_clkgate_2_generation_previous.rpt                                                 ;
+; ip/SRAM_SC/SRAM_SC_s10_user_rst_clkgate_2/SRAM_SC_s10_user_rst_clkgate_2_inst.v                                                                  ;
+; ip/SRAM_SC/SRAM_SC_s10_user_rst_clkgate_2/SRAM_SC_s10_user_rst_clkgate_2_inst.vhd                                                                ;
+; ip/SRAM_SC/SRAM_SC_s10_user_rst_clkgate_2/altera_s10_user_rst_clkgate_1910/synth/altera_s10_user_rst_clkgate.sv                                  ;
+; ip/SRAM_SC/SRAM_SC_s10_user_rst_clkgate_2/synth/SRAM_SC_s10_user_rst_clkgate_2.v                                                                 ;
+; ram1.ip                                                                                                                                          ;
+; ram1/intel_mce_100/synth/sld_mod_ram_rom_top.vhd                                                                                                 ;
+; ram1/ram1.bsf                                                                                                                                    ;
+; ram1/ram1.cmp                                                                                                                                    ;
+; ram1/ram1.html                                                                                                                                   ;
+; ram1/ram1.ppf                                                                                                                                    ;
+; ram1/ram1.qgsynthc                                                                                                                               ;
+; ram1/ram1.qip                                                                                                                                    ;
+; ram1/ram1.sopcinfo                                                                                                                               ;
+; ram1/ram1.xml                                                                                                                                    ;
+; ram1/ram1_bb.v                                                                                                                                   ;
+; ram1/ram1_generation.rpt                                                                                                                         ;
+; ram1/ram1_generation_previous.rpt                                                                                                                ;
+; ram1/ram1_inst.v                                                                                                                                 ;
+; ram1/ram1_inst.vhd                                                                                                                               ;
+; ram1/ram_1port_2000/synth/ram1_ram_1port_2000_dumndey.v                                                                                          ;
+; ram1/ram_1port_2000/synth/ram1_ram_1port_2000_u7b4r7q.v                                                                                          ;
+; ram1/ram_1port_2000/synth/ram1_ram_1port_intel_mce_2000_pjgwmpq.v                                                                                ;
+; ram1/ram_1port_2000/synth/ram1_ram_1port_intel_mce_arb_2000_37opjya.v                                                                            ;
+; ram1/synth/ram1.v                                                                                                                                ;
+; run.tcl                                                                                                                                          ;
+; source_files/top.sv                                                                                                                              ;
+; stp1.stp                                                                                                                                         ;
+; tmp-clearbox/SRAM_SC/23243/a_gray2bin_9f9.tdf                                                                                                    ;
+; tmp-clearbox/SRAM_SC/23243/alt_synch_pipe_5go.tdf                                                                                                ;
+; tmp-clearbox/SRAM_SC/23243/alt_synch_pipe_6go.tdf                                                                                                ;
+; tmp-clearbox/SRAM_SC/23243/alt_synch_pipe_7go.tdf                                                                                                ;
+; tmp-clearbox/SRAM_SC/23243/alt_synch_pipe_8go.tdf                                                                                                ;
+; tmp-clearbox/SRAM_SC/23243/altera_syncram_2bo1.tdf                                                                                               ;
+; tmp-clearbox/SRAM_SC/23243/altera_syncram_dng1.tdf                                                                                               ;
+; tmp-clearbox/SRAM_SC/23243/altera_syncram_h0k1.tdf                                                                                               ;
+; tmp-clearbox/SRAM_SC/23243/altera_syncram_impl_6fc4.tdf                                                                                          ;
+; tmp-clearbox/SRAM_SC/23243/altera_syncram_impl_ipa4.tdf                                                                                          ;
+; tmp-clearbox/SRAM_SC/23243/altera_syncram_impl_kfv3.tdf                                                                                          ;
+; tmp-clearbox/SRAM_SC/23243/altera_syncram_impl_uec4.tdf                                                                                          ;
+; tmp-clearbox/SRAM_SC/23243/altera_syncram_impl_vf44.tdf                                                                                          ;
+; tmp-clearbox/SRAM_SC/23243/altera_syncram_lng1.tdf                                                                                               ;
+; tmp-clearbox/SRAM_SC/23243/altsyncram_fps2.tdf                                                                                                   ;
+; tmp-clearbox/SRAM_SC/23243/cmpr_32f.tdf                                                                                                          ;
+; tmp-clearbox/SRAM_SC/23243/cmpr_52f.tdf                                                                                                          ;
+; tmp-clearbox/SRAM_SC/23243/cmpr_gn8.tdf                                                                                                          ;
+; tmp-clearbox/SRAM_SC/23243/cmpr_hn8.tdf                                                                                                          ;
+; tmp-clearbox/SRAM_SC/23243/cmpr_v1f.tdf                                                                                                          ;
+; tmp-clearbox/SRAM_SC/23243/cntr_80j.tdf                                                                                                          ;
+; tmp-clearbox/SRAM_SC/23243/cntr_iui.tdf                                                                                                          ;
+; tmp-clearbox/SRAM_SC/23243/cntr_o4j.tdf                                                                                                          ;
+; tmp-clearbox/SRAM_SC/23243/cntr_t1j.tdf                                                                                                          ;
+; tmp-clearbox/SRAM_SC/23243/dcfifo_5fa1.tdf                                                                                                       ;
+; tmp-clearbox/SRAM_SC/23243/dcfifo_tea1.tdf                                                                                                       ;
+; tmp-clearbox/SRAM_SC/23243/decode_pod.tdf                                                                                                        ;
+; tmp-clearbox/SRAM_SC/23243/decode_rdd.tdf                                                                                                        ;
+; tmp-clearbox/SRAM_SC/23243/dffpipe_l5c.tdf                                                                                                       ;
+; tmp-clearbox/SRAM_SC/23243/dffpipe_m5c.tdf                                                                                                       ;
+; tmp-clearbox/SRAM_SC/23243/dffpipe_n5c.tdf                                                                                                       ;
+; tmp-clearbox/SRAM_SC/23243/dffpipe_o5c.tdf                                                                                                       ;
+; tmp-clearbox/SRAM_SC/23243/dffpipe_p5c.tdf                                                                                                       ;
+; tmp-clearbox/SRAM_SC/23243/mux_inc.tdf                                                                                                           ;
+; tmp-clearbox/SRAM_SC/23243/mux_o9e.tdf                                                                                                           ;
+; tmp-clearbox/SRAM_SC/23243/mux_rja.tdf                                                                                                           ;
+; tmp-clearbox/SRAM_SC/23243/sld_ela_trigger_4gr.tdf                                                                                               ;
++--------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++--------------------+
+; Files Not Restored ;
++--------------------+
+; File Name          ;
++--------------------+
+
+

@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<deploy
+ date="2022.07.14.17:45:50"
+ outputDirectory="/home/xiyingd/SRAM_SC/ram1/">
+ <perimeter>
+  <parameter
+     name="AUTO_GENERATION_ID"
+     type="Integer"
+     defaultValue="0"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_UNIQUE_ID"
+     type="String"
+     defaultValue=""
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE_FAMILY"
+     type="String"
+     defaultValue="Stratix 10"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE"
+     type="String"
+     defaultValue="1SM21CHU2F53E2VG"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE_SPEEDGRADE"
+     type="String"
+     defaultValue="2"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_CLOCK_CLOCK_RATE"
+     type="Long"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_CLOCK_CLOCK_DOMAIN"
+     type="Integer"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_CLOCK_RESET_DOMAIN"
+     type="Integer"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <interface name="data" kind="conduit" start="0">
+   <property name="associatedClock" value="" />
+   <property name="associatedReset" value="" />
+   <property name="prSafe" value="false" />
+   <port name="data" direction="input" role="datain" width="32" />
+  </interface>
+  <interface name="q" kind="conduit" start="0">
+   <property name="associatedClock" value="" />
+   <property name="associatedReset" value="" />
+   <property name="prSafe" value="false" />
+   <port name="q" direction="output" role="dataout" width="32" />
+  </interface>
+  <interface name="address" kind="conduit" start="0">
+   <property name="associatedClock" value="" />
+   <property name="associatedReset" value="" />
+   <property name="prSafe" value="false" />
+   <port name="address" direction="input" role="address" width="12" />
+  </interface>
+  <interface name="wren" kind="conduit" start="0">
+   <property name="associatedClock" value="" />
+   <property name="associatedReset" value="" />
+   <property name="prSafe" value="false" />
+   <port name="wren" direction="input" role="wren" width="1" />
+  </interface>
+  <interface name="clock" kind="clock" start="0">
+   <property name="clockRate" value="0" />
+   <property name="externallyDriven" value="false" />
+   <property name="ptfSchematicName" value="" />
+   <port name="clock" direction="input" role="clk" width="1" />
+  </interface>
+ </perimeter>
+ <entity kind="ram1" version="1.0" name="ram1">
+  <parameter name="AUTO_CLOCK_CLOCK_RATE" value="-1" />
+  <parameter name="AUTO_CLOCK_CLOCK_DOMAIN" value="-1" />
+  <parameter name="AUTO_CLOCK_RESET_DOMAIN" value="-1" />
+  <parameter name="AUTO_GENERATION_ID" value="0" />
+  <parameter name="AUTO_DEVICE" value="1SM21CHU2F53E2VG" />
+  <parameter name="AUTO_DEVICE_FAMILY" value="Stratix 10" />
+  <parameter name="AUTO_UNIQUE_ID" value="" />
+  <parameter name="AUTO_DEVICE_SPEEDGRADE" value="2" />
+  <generatedFiles>
+   <file
+       path="/home/xiyingd/SRAM_SC/ram1/synth/ram1.v"
+       attributes="CONTAINS_INLINE_CONFIGURATION" />
+  </generatedFiles>
+  <childGeneratedFiles>
+   <file
+       path="/home/xiyingd/SRAM_SC/ram1/synth/ram1.v"
+       attributes="CONTAINS_INLINE_CONFIGURATION" />
+  </childGeneratedFiles>
+  <sourceFiles>
+   <file path="/home/xiyingd/SRAM_SC/ram1.ip" />
+  </sourceFiles>
+  <childSourceFiles>
+   <file
+       path="/home/Programs/intelFPGA_pro/19.4/ip/altera/megafunctions/ram_1port/ram_1_port_hw.tcl" />
+   <file
+       path="/home/Programs/intelFPGA_pro/19.4/ip/altera/sld/jtag/intel_mce/intel_mce_hw.tcl" />
+   <file
+       path="/home/Programs/intelFPGA_pro/19.4/ip/altera/sld/jtag/intel_mce/intel_mce_arb_hw.tcl" />
+  </childSourceFiles>
+  <messages>
+   <message level="Info" culprit="ram1">"Generating: ram1"</message>
+   <message level="Info" culprit="ram1">"Generating: ram1_ram_1port_2000_dumndey"</message>
+   <message level="Info" culprit="intel_mce_inst">"Generating: intel_mce_inst"</message>
+   <message level="Info" culprit="intel_mce_arb_inst">"Generating: intel_mce_arb_inst"</message>
+   <message level="Info" culprit="ram1">"Generating: ram1_ram_1port_intel_mce_2000_pjgwmpq"</message>
+   <message level="Info" culprit="ram1">"Generating: sld_mod_ram_rom_top"</message>
+   <message level="Info" culprit="ram1">"Generating: ram1_ram_1port_intel_mce_arb_2000_37opjya"</message>
+   <message level="Info" culprit="ram1">"Generating: altera_sld_arbiter"</message>
+  </messages>
+ </entity>
+ <entity kind="ram_1port" version="20.0.0" name="ram1_ram_1port_2000_dumndey">
+  <parameter name="GUI_CLOCK_ENABLE_INPUT_A" value="false" />
+  <parameter name="GUI_AclrData" value="false" />
+  <parameter name="GUI_NUMWORDS_A" value="4096" />
+  <parameter name="DEVICE_FAMILY" value="Stratix 10" />
+  <parameter name="GUI_RAM_BLOCK_TYPE" value="Auto" />
+  <parameter name="GUI_SingleClock" value="0" />
+  <parameter name="GUI_AclrAddr" value="false" />
+  <parameter name="GUI_INIT_FILE_LAYOUT" value="PORT_A" />
+  <parameter name="GUI_IMPLEMENT_IN_LES" value="0" />
+  <parameter name="GUI_X_MASK" value="false" />
+  <parameter name="GUI_MAXIMUM_DEPTH" value="0" />
+  <parameter name="GUI_RegOutput" value="true" />
+  <parameter name="GUI_READ_DURING_WRITE_MODE_PORT_A" value="0" />
+  <parameter name="GUI_CLOCK_ENABLE_OUTPUT_A" value="false" />
+  <parameter name="GUI_BYTE_SIZE" value="8" />
+  <parameter name="GUI_RESOURCE_USAGE" value="32 M20K" />
+  <parameter name="GUI_rden" value="false" />
+  <parameter name="GUI_JTAG_ID" value="main" />
+  <parameter name="GUI_WIDTH_A" value="32" />
+  <parameter name="GUI_RegData" value="true" />
+  <parameter name="GUI_FORCE_TO_ZERO" value="false" />
+  <parameter name="GUI_PR" value="false" />
+  <parameter name="GUI_MIFfilename" value="" />
+  <parameter name="GUI_OPTIMIZATION_OPTION" value="0" />
+  <parameter name="GUI_Clken" value="false" />
+  <parameter name="GUI_AclrByte" value="false" />
+  <parameter name="GUI_RegAddr" value="true" />
+  <parameter name="GUI_JTAG_ENABLED" value="true" />
+  <parameter name="GUI_INIT_TO_SIM_X" value="false" />
+  <parameter name="GUI_BYTE_WIDTH" value="4" />
+  <parameter name="GUI_WRCONTROL_ACLR_A" value="false" />
+  <parameter name="GUI_AclrOutput" value="false" />
+  <parameter name="GUI_WIDTHAD_A" value="12" />
+  <parameter name="GUI_ADDRESSSTALL_A" value="false" />
+  <parameter name="GUI_FILE_REFERENCE" value="0" />
+  <parameter name="GUI_BYTE_ENABLE" value="false" />
+  <parameter name="GUI_TBENCH" value="false" />
+  <parameter name="GUI_SclrOutput" value="false" />
+  <parameter name="GUI_MODULE_NAME" value="altera_syncram" />
+  <parameter name="GUI_BlankMemory" value="0" />
+  <generatedFiles>
+   <file
+       path="/home/xiyingd/SRAM_SC/ram1/ram_1port_2000/synth/ram1_ram_1port_2000_dumndey.v"
+       attributes="" />
+  </generatedFiles>
+  <childGeneratedFiles>
+   <file
+       path="/home/xiyingd/SRAM_SC/ram1/ram_1port_2000/synth/ram1_ram_1port_2000_dumndey.v"
+       attributes="" />
+  </childGeneratedFiles>
+  <sourceFiles>
+   <file
+       path="/home/Programs/intelFPGA_pro/19.4/ip/altera/megafunctions/ram_1port/ram_1_port_hw.tcl" />
+  </sourceFiles>
+  <childSourceFiles>
+   <file
+       path="/home/Programs/intelFPGA_pro/19.4/ip/altera/sld/jtag/intel_mce/intel_mce_hw.tcl" />
+   <file
+       path="/home/Programs/intelFPGA_pro/19.4/ip/altera/sld/jtag/intel_mce/intel_mce_arb_hw.tcl" />
+  </childSourceFiles>
+  <instantiator instantiator="ram1" as="ram_1port_0" />
+  <messages>
+   <message level="Info" culprit="ram1">"Generating: ram1_ram_1port_2000_dumndey"</message>
+   <message level="Info" culprit="intel_mce_inst">"Generating: intel_mce_inst"</message>
+   <message level="Info" culprit="intel_mce_arb_inst">"Generating: intel_mce_arb_inst"</message>
+   <message level="Info" culprit="ram1">"Generating: ram1_ram_1port_intel_mce_2000_pjgwmpq"</message>
+   <message level="Info" culprit="ram1">"Generating: sld_mod_ram_rom_top"</message>
+   <message level="Info" culprit="ram1">"Generating: ram1_ram_1port_intel_mce_arb_2000_37opjya"</message>
+   <message level="Info" culprit="ram1">"Generating: altera_sld_arbiter"</message>
+  </messages>
+ </entity>
+ <entity
+   kind="ram_1port_intel_mce"
+   version="20.0.0"
+   name="ram1_ram_1port_intel_mce_2000_pjgwmpq">
+  <parameter name="IS_DATA_IN_RAM" value="1" />
+  <parameter name="NUMWORDS" value="4096" />
+  <parameter name="IS_READABLE" value="1" />
+  <parameter name="FIFO_SIZE" value="16" />
+  <parameter name="SLD_NODE_INFO" value="270036480" />
+  <parameter name="QUEUE_SIZE_WIDTH" value="5" />
+  <parameter name="FIFO_SIZE_WIDTH" value="4" />
+  <parameter name="BYTE_ENABLE_WIDTH" value="4" />
+  <parameter name="NODE_NAME" value="0" />
+  <parameter name="BACKPRESSURE_ENABLED" value="1" />
+  <parameter name="WIDTH_WORD" value="32" />
+  <parameter name="LATENCY" value="2" />
+  <parameter name="WIDTHAD" value="12" />
+  <parameter name="SHIFT_COUNT_BITS" value="6" />
+  <parameter name="FIFO_SIZE_DELAY" value="5" />
+  <generatedFiles>
+   <file
+       path="/home/xiyingd/SRAM_SC/ram1/ram_1port_2000/synth/ram1_ram_1port_intel_mce_2000_pjgwmpq.v"
+       attributes="CONTAINS_INLINE_CONFIGURATION" />
+  </generatedFiles>
+  <childGeneratedFiles>
+   <file
+       path="/home/xiyingd/SRAM_SC/ram1/ram_1port_2000/synth/ram1_ram_1port_intel_mce_2000_pjgwmpq.v"
+       attributes="CONTAINS_INLINE_CONFIGURATION" />
+  </childGeneratedFiles>
+  <sourceFiles/>
+  <childSourceFiles>
+   <file
+       path="/home/Programs/intelFPGA_pro/19.4/ip/altera/sld/jtag/intel_mce/intel_mce_hw.tcl" />
+  </childSourceFiles>
+  <instantiator instantiator="ram1_ram_1port_2000_dumndey" as="intel_mce_inst" />
+  <messages>
+   <message level="Info" culprit="ram1">"Generating: ram1_ram_1port_intel_mce_2000_pjgwmpq"</message>
+   <message level="Info" culprit="ram1">"Generating: sld_mod_ram_rom_top"</message>
+  </messages>
+ </entity>
+ <entity
+   kind="ram_1port_intel_mce_arb"
+   version="20.0.0"
+   name="ram1_ram_1port_intel_mce_arb_2000_37opjya">
+  <parameter name="BYTE_ENABLE_WIDTH" value="4" />
+  <parameter name="DATA_WIDTH" value="32" />
+  <parameter name="LATENCY" value="2" />
+  <parameter name="WIDTHAD" value="12" />
+  <generatedFiles>
+   <file
+       path="/home/xiyingd/SRAM_SC/ram1/ram_1port_2000/synth/ram1_ram_1port_intel_mce_arb_2000_37opjya.v"
+       attributes="CONTAINS_INLINE_CONFIGURATION" />
+  </generatedFiles>
+  <childGeneratedFiles>
+   <file
+       path="/home/xiyingd/SRAM_SC/ram1/ram_1port_2000/synth/ram1_ram_1port_intel_mce_arb_2000_37opjya.v"
+       attributes="CONTAINS_INLINE_CONFIGURATION" />
+  </childGeneratedFiles>
+  <sourceFiles/>
+  <childSourceFiles>
+   <file
+       path="/home/Programs/intelFPGA_pro/19.4/ip/altera/sld/jtag/intel_mce/intel_mce_arb_hw.tcl" />
+  </childSourceFiles>
+  <instantiator instantiator="ram1_ram_1port_2000_dumndey" as="intel_mce_arb_inst" />
+  <messages>
+   <message level="Info" culprit="ram1">"Generating: ram1_ram_1port_intel_mce_arb_2000_37opjya"</message>
+   <message level="Info" culprit="ram1">"Generating: altera_sld_arbiter"</message>
+  </messages>
+ </entity>
+ <entity kind="intel_mce" version="1.0.0" name="sld_mod_ram_rom_top">
+  <parameter name="IS_DATA_IN_RAM" value="1" />
+  <parameter name="NUMWORDS" value="4096" />
+  <parameter name="IS_READABLE" value="1" />
+  <parameter name="FIFO_SIZE" value="16" />
+  <parameter name="SLD_NODE_INFO" value="270036480" />
+  <parameter name="QUEUE_SIZE_WIDTH" value="5" />
+  <parameter name="FIFO_SIZE_WIDTH" value="4" />
+  <parameter name="BYTE_ENABLE_WIDTH" value="4" />
+  <parameter name="NODE_NAME" value="0" />
+  <parameter name="BACKPRESSURE_ENABLED" value="1" />
+  <parameter name="WIDTH_WORD" value="32" />
+  <parameter name="LATENCY" value="2" />
+  <parameter name="WIDTHAD" value="12" />
+  <parameter name="SHIFT_COUNT_BITS" value="6" />
+  <parameter name="FIFO_SIZE_DELAY" value="5" />
+  <generatedFiles>
+   <file
+       path="/home/xiyingd/SRAM_SC/ram1/intel_mce_100/synth/sld_mod_ram_rom_top.vhd"
+       attributes="" />
+  </generatedFiles>
+  <childGeneratedFiles>
+   <file
+       path="/home/xiyingd/SRAM_SC/ram1/intel_mce_100/synth/sld_mod_ram_rom_top.vhd"
+       attributes="" />
+  </childGeneratedFiles>
+  <sourceFiles>
+   <file
+       path="/home/Programs/intelFPGA_pro/19.4/ip/altera/sld/jtag/intel_mce/intel_mce_hw.tcl" />
+  </sourceFiles>
+  <childSourceFiles/>
+  <instantiator
+     instantiator="ram1_ram_1port_intel_mce_2000_pjgwmpq"
+     as="intel_mce_inst" />
+  <messages>
+   <message level="Info" culprit="ram1">"Generating: sld_mod_ram_rom_top"</message>
+  </messages>
+ </entity>
+ <entity kind="intel_mce_arb" version="1.0.0" name="altera_sld_arbiter">
+  <parameter name="BYTE_ENABLE_WIDTH" value="4" />
+  <parameter name="DATA_WIDTH" value="32" />
+  <parameter name="LATENCY" value="2" />
+  <parameter name="WIDTHAD" value="12" />
+  <generatedFiles/>
+  <childGeneratedFiles/>
+  <sourceFiles>
+   <file
+       path="/home/Programs/intelFPGA_pro/19.4/ip/altera/sld/jtag/intel_mce/intel_mce_arb_hw.tcl" />
+  </sourceFiles>
+  <childSourceFiles/>
+  <instantiator
+     instantiator="ram1_ram_1port_intel_mce_arb_2000_37opjya"
+     as="intel_mce_arb_inst" />
+  <messages>
+   <message level="Info" culprit="ram1">"Generating: altera_sld_arbiter"</message>
+  </messages>
+ </entity>
+</deploy>

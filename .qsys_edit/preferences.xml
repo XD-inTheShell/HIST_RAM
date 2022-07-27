@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<preferences>
+ <debug showDebugMenu="0" />
+ <window width="2560" height="1369" x="0" y="23" />
+ <systemtable filter="All Interfaces" />
+ <library
+   expandedCategories="Library/Basic Functions/Bridges and Adaptors/Memory Mapped,Library/Basic Functions,Existing IP Variants,Library/Basic Functions/Bridges and Adaptors,Project,Library" />
+ <hdlexample language="VERILOG" />
+ <generation path="" />
+</preferences>

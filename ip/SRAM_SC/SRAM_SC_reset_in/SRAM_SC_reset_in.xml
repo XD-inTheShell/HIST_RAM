@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<deploy
+ date="2022.07.25.13:26:04"
+ outputDirectory="/home/xiyingd/HIST_RAM_MEMTEST/ip/SRAM_SC/SRAM_SC_reset_in/">
+ <perimeter>
+  <parameter
+     name="AUTO_GENERATION_ID"
+     type="Integer"
+     defaultValue="0"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_UNIQUE_ID"
+     type="String"
+     defaultValue=""
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE_FAMILY"
+     type="String"
+     defaultValue="Stratix 10"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE"
+     type="String"
+     defaultValue="1SM21CHU2F53E2VG"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE_SPEEDGRADE"
+     type="String"
+     defaultValue="2"
+     onHdl="0"
+     affectsHdl="1" />
+  <interface name="in_reset" kind="reset" start="0">
+   <property name="associatedClock" value="" />
+   <property name="synchronousEdges" value="NONE" />
+   <port name="in_reset" direction="input" role="reset" width="1" />
+  </interface>
+  <interface name="out_reset" kind="reset" start="1">
+   <property name="associatedClock" value="" />
+   <property name="associatedDirectReset" value="in_reset" />
+   <property name="associatedResetSinks" value="in_reset" />
+   <property name="synchronousEdges" value="NONE" />
+   <port name="out_reset" direction="output" role="reset" width="1" />
+  </interface>
+ </perimeter>
+ <entity kind="SRAM_SC_reset_in" version="1.0" name="SRAM_SC_reset_in">
+  <parameter name="AUTO_GENERATION_ID" value="0" />
+  <parameter name="AUTO_DEVICE" value="1SM21CHU2F53E2VG" />
+  <parameter name="AUTO_DEVICE_FAMILY" value="Stratix 10" />
+  <parameter name="AUTO_UNIQUE_ID" value="" />
+  <parameter name="AUTO_DEVICE_SPEEDGRADE" value="2" />
+  <generatedFiles>
+   <file
+       path="/home/xiyingd/HIST_RAM_MEMTEST/ip/SRAM_SC/SRAM_SC_reset_in/synth/SRAM_SC_reset_in.v"
+       attributes="CONTAINS_INLINE_CONFIGURATION" />
+  </generatedFiles>
+  <childGeneratedFiles>
+   <file
+       path="/home/xiyingd/HIST_RAM_MEMTEST/ip/SRAM_SC/SRAM_SC_reset_in/synth/SRAM_SC_reset_in.v"
+       attributes="CONTAINS_INLINE_CONFIGURATION" />
+  </childGeneratedFiles>
+  <sourceFiles>
+   <file path="/home/xiyingd/HIST_RAM_MEMTEST/ip/SRAM_SC/SRAM_SC_reset_in.ip" />
+  </sourceFiles>
+  <childSourceFiles/>
+  <messages>
+   <message level="Info" culprit="SRAM_SC_reset_in">"Generating: SRAM_SC_reset_in"</message>
+  </messages>
+ </entity>
+</deploy>

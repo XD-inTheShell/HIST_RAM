@@ -1,0 +1,52 @@
+set_global_assignment -name TOP_LEVEL_ENTITY top
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION "19.4.0 SP0.29"
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "14:25:02  JULY 08, 2022"
+set_global_assignment -name LAST_QUARTUS_VERSION "19.4.0 SP0.29 Pro Edition"
+set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
+
+set_global_assignment -name FAMILY "Stratix 10"
+set_global_assignment -name DEVICE 1SM21CHU2F53E2VG
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 100
+set_global_assignment -name DEVICE_FILTER_PACKAGE FBGA
+set_global_assignment -name DEVICE_FILTER_SPEED_GRADE 2
+set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 1
+set_global_assignment -name AUTO_RESTART_CONFIGURATION OFF
+set_global_assignment -name ENABLE_OCT_DONE OFF
+set_global_assignment -name ENABLE_CONFIGURATION_PINS OFF
+set_global_assignment -name ENABLE_BOOT_SEL_PIN OFF
+set_global_assignment -name STRATIXV_CONFIGURATION_SCHEME "AVST X16"
+set_global_assignment -name CONFIGURATION_VCCIO_LEVEL 1.8V
+set_global_assignment -name USE_CONFIGURATION_DEVICE OFF
+set_global_assignment -name ENABLE_ED_CRC_CHECK ON
+set_global_assignment -name USE_CONF_DONE SDM_IO16
+set_global_assignment -name USE_INIT_DONE SDM_IO0
+set_global_assignment -name ACTIVE_SERIAL_CLOCK AS_FREQ_100MHZ
+set_global_assignment -name DEVICE_INITIALIZATION_CLOCK OSC_CLK_1_125MHZ
+set_global_assignment -name MINIMUM_SEU_INTERVAL 0
+set_global_assignment -name USE_PWRMGT_SCL SDM_IO14
+set_global_assignment -name USE_PWRMGT_SDA SDM_IO11
+set_global_assignment -name USE_PWRMGT_ALERT SDM_IO12
+set_global_assignment -name VID_OPERATION_MODE "PMBUS SLAVE"
+set_global_assignment -name PWRMGT_DEVICE_ADDRESS_IN_PMBUS_SLAVE_MODE 01
+set_location_assignment PIN_A24 -to clk
+set_global_assignment -name ENABLE_SIGNALTAP ON
+set_global_assignment -name USE_SIGNALTAP_FILE stp1.stp
+set_instance_assignment -name IO_STANDARD LVDS -to clk -entity top
+set_global_assignment -name SYSTEMVERILOG_FILE source_files/regfile.sv
+set_global_assignment -name SYSTEMVERILOG_FILE source_files/register32.sv
+set_global_assignment -name SYSTEMVERILOG_FILE source_files/top.sv
+set_global_assignment -name IP_FILE ip/SRAM_SC/SRAM_SC_clock_in.ip
+set_global_assignment -name IP_FILE ip/SRAM_SC/SRAM_SC_reset_in.ip
+set_global_assignment -name IP_FILE ip/SRAM_SC/SRAM_SC_onchip_memory2_1.ip
+set_global_assignment -name IP_FILE ip/SRAM_SC/SRAM_SC_master_1.ip
+set_global_assignment -name QSYS_FILE SRAM_SC.qsys
+set_global_assignment -name IP_FILE ip/SRAM_SC/SRAM_SC_iopll_0.ip
+set_global_assignment -name IP_FILE ip/SRAM_SC/SRAM_SC_ram_1port_0.ip
+set_global_assignment -name IP_FILE ip/SRAM_SC/SRAM_SC_s10_user_rst_clkgate_0.ip
+set_global_assignment -name IP_FILE ip/SRAM_SC/SRAM_SC_s10_user_rst_clkgate_1.ip
+set_global_assignment -name IP_FILE ip/SRAM_SC/SRAM_SC_s10_user_rst_clkgate_2.ip
+set_global_assignment -name SIGNALTAP_FILE stp1.stp
+set_global_assignment -name IP_FILE ip/SRAM_SC/SRAM_SC_clock_bridge_0.ip
+set_global_assignment -name IP_FILE ram1.ip
+set_global_assignment -name IP_FILE ip/SRAM_SC/SRAM_SC_master_0.ip
