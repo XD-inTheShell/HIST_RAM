@@ -56,19 +56,19 @@
 # 
 # FORCE_MODELSIM_AE_SELECTION                       -- Set to true to force to select Modelsim AE always.
 # Model Technology ModelSim SE-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
-# Start time: 17:47:48 on Jul 31,2022
+# Start time: 11:40:37 on Aug 01,2022
 # vlog -reportprogress 300 /home/xiyingd/HIST_RAM_MEMTEST/source_files/pipeline_ram.sv /home/xiyingd/HIST_RAM_MEMTEST/source_files/pipeline_ram_tb.sv 
 # -- Compiling module pipeline_ram
 # -- Compiling module pipeline_ram_tb
 # 
 # Top level modules:
 # 	pipeline_ram_tb
-# End time: 17:47:48 on Jul 31,2022, Elapsed time: 0:00:00
+# End time: 11:40:37 on Aug 01,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # pipeline_ram_tb
 # [exec] elab_debug
 # vsim -voptargs="+acc" -L work -L work_lib -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L fourteennm_ver -L fourteennm_ct1_ver -L SRAM_SC_clock_in -L SRAM_SC_reset_in -L altera_jtag_dc_streaming_191 -L timing_adapter_191 -L altera_avalon_sc_fifo_191 -L altera_avalon_st_bytes_to_packets_1910 -L altera_avalon_st_packets_to_bytes_1910 -L altera_avalon_packets_to_master_1910 -L channel_adapter_191 -L altera_reset_controller_191 -L altera_jtag_avalon_master_191 -L SRAM_SC_master_1 -L altera_iopll_1930 -L SRAM_SC_iopll_0 -L altera_s10_user_rst_clkgate_1910 -L SRAM_SC_s10_user_rst_clkgate_2 -L SRAM_SC_clock_bridge_0 -L intel_mce_100 -L ram_1port_2000 -L intel_mce_arb_100 -L ram1 -L SRAM_SC_master_0 -L ram_2port_2000 -L ram2 -L SRAM_SC pipeline_ram_tb 
-# Start time: 17:47:49 on Jul 31,2022
+# Start time: 11:40:38 on Aug 01,2022
 # ** Note: (vsim-3813) Design is being optimized due to module recompilation...
 # Loading sv_std.std
 # Loading work.pipeline_ram_tb(fast)
@@ -81,5 +81,5 @@
 # Warning: starting Stratix 10 and onwards, read during write mode port b no longer support NEW_DATA_NO_NBE_READ, simulation will behave as NEW_DATA_WITH_NBE_READ
 # ** Note: $finish    : /home/xiyingd/HIST_RAM_MEMTEST/source_files/pipeline_ram_tb.sv(22)
 #    Time: 225 ns  Iteration: 0  Instance: /pipeline_ram_tb
-# End time: 17:47:57 on Jul 31,2022, Elapsed time: 0:00:08
+# End time: 11:40:58 on Aug 01,2022, Elapsed time: 0:00:20
 # Errors: 0, Warnings: 0

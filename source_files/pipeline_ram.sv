@@ -14,7 +14,7 @@ module pipeline_ram (
     ram2 u0 (
         .data      (writedata),      //   input,  width = 32,      data.datain
         .q         (readdata),         //  output,  width = 32,         q.dataout
-        .wraddress (wraddr), //   input,   width = 5, wraddress.wraddress
+        .wraddress (addr_w), //   input,   width = 5, wraddress.wraddress
         .rdaddress (rdaddr), //   input,   width = 5, rdaddress.rdaddress
         .wren      (en_w),      //   input,   width = 1,      wren.wren
         .clock     (clk)      //   input,   width = 1,     clock.clk
@@ -30,7 +30,6 @@ module pipeline_ram (
     end
 
     // Write Stage, add one and update to memory. 
-    // TODO: Add forwarding 
     always_ff @(posedge clk) begin
         if (rst) begin
             addr_w <= 'b0;
@@ -62,43 +61,47 @@ module pipeline_ram (
     end
 
     // forward
-    logic fw_rw_r, fw_rw_b, fw_rw_w;
-    logic [31:0] fw_value_r, fw_value_b, fw_value_w;
-    assign fw_rw_r = (addr_r == addr_w) & en_w;
-    always_comb begin : fowarding
-        fw_value_r = 'bx;
-        if(fw_rw_r) begin 
-            fw_value_r = writedata;
-        end
-    end
-
+    logic [31:0] fw_value_b, fw_value_w;
     always_ff @(posedge clk) begin
         if(rst) begin
-            fw_rw_b <= 0;
-            fw_rw_w <= 0;
-
             fw_value_b <= 0;
             fw_value_w <= 0;
         end else begin
-            fw_rw_b <= fw_rw_r;
-            fw_rw_w <= fw_rw_b;
-
-            fw_value_b <= fw_value_r;
+            fw_value_b <= writedata;
             fw_value_w <= fw_value_b;
         end
     end
-    logic test;
+    
+    logic [4:0] addr_prev0, addr_prev1;
     always_ff @(posedge clk) begin
         if(rst) begin
-            test <= 0;
+            addr_prev0 <= 0;
+            addr_prev1 <= 0;
         end else begin
-            test <= fw_rw_r;
+            addr_prev0 <= addr_w;
+            addr_prev1 <= addr_prev0;
         end
     end
-    
 
+    logic [4:0] en_prev0, en_prev1;
+    always_ff @(posedge clk) begin
+        if(rst) begin
+            en_prev0 <= 0;
+            en_prev1 <= 0;
+        end else begin
+            en_prev0 <= en_w;
+            en_prev1 <= en_prev0;
+        end
+    end
+
+    //
+    logic fw_rb, fw_rw;
+    assign fw_rb = en_prev0 ? (addr_w == addr_prev0) : 1'b0;
+    assign fw_rw = en_prev1 ? (addr_w == addr_prev1) : 1'b0;
     always_comb begin
-        if(fw_rw_w) begin
+        if(fw_rb) begin
+            readdata_fvalue = fw_value_b;
+        end else if(fw_rw) begin
             readdata_fvalue = fw_value_w;
         end else begin
             readdata_fvalue = readdata;

@@ -37,16 +37,30 @@ module pipeline_ram_tb;
         if(cyc_count == 1) begin
             addr_r <= 'd1;
             ram_en <= 'b1;
-        end
-        else if (cyc_count == 5) begin
-            addr_r <= 'd1;
+        end else if (cyc_count == 5) begin
+            addr_r <= 'd5;
+            ram_en <= 'b1;
+        end else if (cyc_count == 6) begin
+            addr_r <= 'd6;
+            ram_en <= 'b1;
+        end else if (cyc_count == 7) begin
+            addr_r <= 'd5;
             ram_en <= 'b1;
         end else if (cyc_count == 8) begin
+            addr_r <= 'd5;
+            ram_en <= 'b1;
+        end else if (cyc_count == 9) begin
             addr_r <= 'd5;
             ram_en <= 'b1;
         end else if (cyc_count == 10) begin
             addr_r <= 'd5;
             ram_en <= 'b1;
+        end else if (cyc_count == 11) begin
+            addr_r <= 'd11;
+            ram_en <= 'b1;
+        end else if (cyc_count == 12) begin
+            addr_r <= 'd5;
+            ram_en <= 'b0;
         end else if (cyc_count == 13) begin
             addr_r <= 'd5;
             ram_en <= 'b0;
