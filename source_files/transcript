@@ -1,0 +1,85 @@
+# //  ModelSim SE-64 2020.1 Jan 28 2020 Linux 3.10.0-1160.66.1.el7.x86_64
+# //
+# //  Copyright 1991-2020 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  ModelSim SE-64 and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# do /home/xiyingd/HIST_RAM_MEMTEST/sim/top.tcl
+# /home/xiyingd/HIST_RAM_MEMTEST/sim
+# [exec] file_copy
+# List Of Command Line Aliases
+# 
+# file_copy                                         -- Copy ROM/RAM files to simulation directory
+# 
+# dev_com                                           -- Compile device library files
+# 
+# com                                               -- Compile the design files in correct order
+# 
+# elab                                              -- Elaborate top level design
+# 
+# elab_debug                                        -- Elaborate the top level design with -voptargs=+acc option
+# 
+# ld                                                -- Compile all the design files and elaborate the top level design
+# 
+# ld_debug                                          -- Compile all the design files and elaborate the top level design with  -voptargs=+acc
+# 
+# 
+# 
+# List Of Variables
+# 
+# TOP_LEVEL_NAME                                    -- Top level module name.
+#                                                      For most designs, this should be overridden
+#                                                      to enable the elab/elab_debug aliases.
+# 
+# SYSTEM_INSTANCE_NAME                              -- Instantiated system module name inside top level module.
+# 
+# QSYS_SIMDIR                                       -- Qsys base simulation directory.
+# 
+# QUARTUS_INSTALL_DIR                               -- Quartus installation directory.
+# 
+# USER_DEFINED_COMPILE_OPTIONS                      -- User-defined compile options, added to com/dev_com aliases.
+# 
+# USER_DEFINED_VHDL_COMPILE_OPTIONS                 -- User-defined vhdl compile options, added to com/dev_com aliases.
+# 
+# USER_DEFINED_VERILOG_COMPILE_OPTIONS              -- User-defined verilog compile options, added to com/dev_com aliases.
+# 
+# USER_DEFINED_ELAB_OPTIONS                         -- User-defined elaboration options, added to elab/elab_debug aliases.
+# 
+# SILENCE                                           -- Set to true to suppress all informational and/or warning messages in the generated simulation script. 
+# 
+# FORCE_MODELSIM_AE_SELECTION                       -- Set to true to force to select Modelsim AE always.
+# Model Technology ModelSim SE-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
+# Start time: 17:47:48 on Jul 31,2022
+# vlog -reportprogress 300 /home/xiyingd/HIST_RAM_MEMTEST/source_files/pipeline_ram.sv /home/xiyingd/HIST_RAM_MEMTEST/source_files/pipeline_ram_tb.sv 
+# -- Compiling module pipeline_ram
+# -- Compiling module pipeline_ram_tb
+# 
+# Top level modules:
+# 	pipeline_ram_tb
+# End time: 17:47:48 on Jul 31,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# pipeline_ram_tb
+# [exec] elab_debug
+# vsim -voptargs="+acc" -L work -L work_lib -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L fourteennm_ver -L fourteennm_ct1_ver -L SRAM_SC_clock_in -L SRAM_SC_reset_in -L altera_jtag_dc_streaming_191 -L timing_adapter_191 -L altera_avalon_sc_fifo_191 -L altera_avalon_st_bytes_to_packets_1910 -L altera_avalon_st_packets_to_bytes_1910 -L altera_avalon_packets_to_master_1910 -L channel_adapter_191 -L altera_reset_controller_191 -L altera_jtag_avalon_master_191 -L SRAM_SC_master_1 -L altera_iopll_1930 -L SRAM_SC_iopll_0 -L altera_s10_user_rst_clkgate_1910 -L SRAM_SC_s10_user_rst_clkgate_2 -L SRAM_SC_clock_bridge_0 -L intel_mce_100 -L ram_1port_2000 -L intel_mce_arb_100 -L ram1 -L SRAM_SC_master_0 -L ram_2port_2000 -L ram2 -L SRAM_SC pipeline_ram_tb 
+# Start time: 17:47:49 on Jul 31,2022
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading sv_std.std
+# Loading work.pipeline_ram_tb(fast)
+# Loading work.pipeline_ram(fast)
+# Loading ram2.ram2(fast)
+# Loading ram_2port_2000.ram2_ram_2port_2000_s3stiby(fast)
+# Loading altera_lnsim_ver.altera_syncram(fast)
+# Loading altera_lnsim_ver.ALTERA_LNSIM_MEMORY_INITIALIZATION(fast)
+# Warning: starting Stratix 10 and onwards, read during write mode port a no longer support NEW_DATA_NO_NBE_READ, simulation will behave as NEW_DATA_WITH_NBE_READ
+# Warning: starting Stratix 10 and onwards, read during write mode port b no longer support NEW_DATA_NO_NBE_READ, simulation will behave as NEW_DATA_WITH_NBE_READ
+# ** Note: $finish    : /home/xiyingd/HIST_RAM_MEMTEST/source_files/pipeline_ram_tb.sv(22)
+#    Time: 225 ns  Iteration: 0  Instance: /pipeline_ram_tb
+# End time: 17:47:57 on Jul 31,2022, Elapsed time: 0:00:08
+# Errors: 0, Warnings: 0
