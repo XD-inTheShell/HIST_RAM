@@ -1,11 +1,12 @@
 `timescale 1ns/1ns
 module pipeline_ram_tb;
-    reg clk, rst, ram_en;
+    reg clk, rst, ram_en, use_JTAG;
     reg [4:0] addr_r;
     pipeline_ram dut(
         .clk(clk), .rst(rst),
         .addr_r(addr_r),
-        .ram_en(ram_en)
+        .ram_en(ram_en),
+        .use_JTAG(use_JTAG)
     );
 
     initial clk = 0;
@@ -16,6 +17,7 @@ module pipeline_ram_tb;
     initial begin
         #15;
         rst = 1;
+        use_JTAG = 0;
         #10;
         rst = 0;
         #200;

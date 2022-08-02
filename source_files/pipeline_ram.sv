@@ -1,22 +1,60 @@
 module pipeline_ram (
     input logic clk, rst,
     input logic [4:0] addr_r,
-    input logic ram_en
-);    
+    input logic ram_en,
+    // JTAG Specific
+    input logic use_JTAG,
+    input logic [31:0] m_addr,
+    output logic [31:0] s_readdata,
+    input logic m_write,
+    input logic [31:0] m_writedata,
+    output logic s_readdatavalid
+); 
+
+    // master_1_master_reset_reset                  (m1_sys_rst),                  //  output,   width = 1,             master_1_master_reset.reset
+    // .master_1_master_address                      (m1_addr),                      //  output,  width = 32,                   master_1_master.address
+    // .master_1_master_readdata                     (m1_readdata),                     //   input,  width = 32,                                  .readdata
+    // .master_1_master_read                         (m1_read),                         //  output,   width = 1,                                  .read
+    // .master_1_master_write                        (m1_write),                        //  output,   width = 1,                                  .write
+    // .master_1_master_writedata                    (m1_writedata),                    //  output,  width = 32,                                  .hist_writedata
+    // .master_1_master_waitrequest                  (m1_waitrequest),                  //   input,   width = 1,                                  .waitrequest
+    // .master_1_master_readdatavalid                (m1_readdatavalid),                //   input,   width = 1,                                  .readdatavalid
+    // .master_1_master_byteenable 
+
     // three stages: issue read, between read and write, write
-    logic [4:0] addr_b, addr_w, wraddr;
+    logic [4:0] addr_b, addr_w;
     logic en_r, en_b, en_w;
     
     // Issue Read
-    logic [31:0] readdata, writedata, readdata_fvalue;
-    logic [4:0] rdaddr;
-    assign rdaddr = addr_r;
+    logic [31:0] readdata, hist_writedata, readdata_fvalue;
+    logic [4:0] hist_rdaddr;
+    assign hist_rdaddr = addr_r;
+
+    // Jtag specific
+    logic wren;
+    logic [4:0] wraddr, rdaddr;
+    logic [31:0] writedata;
+    always_comb begin
+        if(use_JTAG) begin
+            writedata = m_writedata;
+            wraddr = m_addr;
+            rdaddr = m_addr;
+            wren = m_write;
+            s_readdata = readdata;
+        end else begin
+            writedata = hist_writedata;
+            wraddr = addr_w;
+            rdaddr = hist_rdaddr;
+            wren = en_w;
+            s_readdata = 'bx;
+        end
+    end
     ram2 u0 (
         .data      (writedata),      //   input,  width = 32,      data.datain
         .q         (readdata),         //  output,  width = 32,         q.dataout
-        .wraddress (addr_w), //   input,   width = 5, wraddress.wraddress
+        .wraddress (wraddr), //   input,   width = 5, wraddress.wraddress
         .rdaddress (rdaddr), //   input,   width = 5, rdaddress.rdaddress
-        .wren      (en_w),      //   input,   width = 1,      wren.wren
+        .wren      (wren),      //   input,   width = 1,      wren.wren
         .clock     (clk)      //   input,   width = 1,     clock.clk
     );
 
@@ -38,8 +76,7 @@ module pipeline_ram (
         end
     end
 
-    assign writedata =  readdata_fvalue + 1;
-    assign wraddr = addr_w;
+    assign hist_writedata =  readdata_fvalue + 1;
 
     // always_ff (posedge clk) begin
     //     if(rst) begin
@@ -67,7 +104,7 @@ module pipeline_ram (
             fw_value_b <= 0;
             fw_value_w <= 0;
         end else begin
-            fw_value_b <= writedata;
+            fw_value_b <= hist_writedata;
             fw_value_w <= fw_value_b;
         end
     end
