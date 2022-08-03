@@ -3,57 +3,43 @@ module pipeline_ram_top (
 );
 
     logic rst;
-	 logic locked;
-    
-	 logic pll_clk, m1_sys_rst, m1_read, m1_write, m1_waitrequest, m1_readdatavalid;
-	 logic readdatavalid_tmp;
-	 logic [31 : 0] m1_addr, m1_readdata, m1_writedata;
-	 logic [31:0] r0, r1, r2, r3;
-	 
-	 assign m1_waitrequest = 1'b0;
-	 
-	 always @(posedge pll_clk) begin
-	     if (m1_sys_rst) begin
-		      readdatavalid_tmp <= 1'b0;
-              m1_readdatavalid <= 1'b0;
-        end else begin
-            readdatavalid_tmp <= m1_read;
-            m1_readdatavalid <= readdatavalid_tmp;
-		  end
-	 end
-	
-	// r0, JTAG or RegFile
-	// r1, ram address
-	// r2, wren
-	// r3, data
-	logic effect_write;
-    logic effect_write_last;
-	logic [31:0] rendered_memaddr, access_addr, writedata;
-	logic ram_wren;
-	assign access_addr = r0[0] ? r1 : rendered_memaddr;
-	 assign effect_write = r0[0] ? r2[0] : m1_write;
-	 assign writedata = r0[0] ? r3 : m1_writedata;
-	
+    logic locked;
 
-    always_ff @(posedge pll_clk) begin
-        if(m1_sys_rst) begin
-            ram_wren <= 0;
-            effect_write_last <= 0;
-        end
-        else if (~effect_write_last & effect_write) begin
-            ram_wren <= 1;
-            effect_write_last <= effect_write;
-        end else begin
-            ram_wren <= 0;
-            effect_write_last <= effect_write;
+    logic pll_clk, m1_sys_rst, m1_read, m1_write, m1_waitrequest, m1_readdatavalid;
+    logic readdatavalid_tmp;
+    logic [31:0] m1_addr, m1_readdata, m1_writedata;
+    logic [31:0] r0, r1, r2, r3;
+
+    logic [31:0] rendered_memaddr, writedata;
+    logic [4:0] access_addr;
+    logic ram_wren, rf_wren; 
+
+    // r0, JTAG or RegFile
+    // r1, ram address
+    // r2, wren
+    // r3, data
+    logic effect_write;
+    logic effect_write_last;
+    // select between registerfile driven or jtag
+    assign access_addr = r0[0] ? r1[4:0] : rendered_memaddr[4:0];
+    assign effect_write = r2[0];
+    assign ram_wren = r0[0] ? rf_wren : m1_write;
+    assign writedata = r0[0] ? r3 : m1_writedata;
+
+    assign rendered_memaddr = m1_addr>>2;
+    assign m1_waitrequest = 1'b0;
+
+    always @(posedge pll_clk) begin
+        if (m1_sys_rst) begin
+            readdatavalid_tmp <= 1'b0;
+            m1_readdatavalid <= 1'b0;
+    end else begin
+        readdatavalid_tmp <= m1_read;
+        m1_readdatavalid <= readdatavalid_tmp;
         end
     end
-
-    
-	 
-	 
-    assign rendered_memaddr = m1_addr>>2;
-	 
+    logic use_JTAG;
+    assign use_JTAG = ~r0[0];
     pipeline_ram dut(
         .clk(pll_clk), .rst(m1_sys_rst),
         .addr_r(r1),
@@ -66,29 +52,51 @@ module pipeline_ram_top (
         .m_writedata(m1_writedata),
         .s_readdatavalid()
     );
-    // ram1 u0 (
-    //     .data    (writedata),    //   input,  width = 32,    data.datain
-    //     .q       (m1_readdata),       //  output,  width = 32,       q.dataout
-    //     .address (access_addr), //   input,  width = 12, address.address
-    //     .wren    (ram_wren),    //   input,   width = 1,    wren.wren
-    //     .clock   (pll_clk)    //   input,   width = 1,   clock.clk
-    // );
+
+
+    
+
+
+    always_ff @(posedge pll_clk) begin
+    if(m1_sys_rst) begin
+        rf_wren <= 0;
+        effect_write_last <= 0;
+    end
+    else if (~effect_write_last & effect_write) begin
+        rf_wren <= 1;
+        effect_write_last <= effect_write;
+    end else begin
+        rf_wren <= 0;
+        effect_write_last <= effect_write;
+    end
+    end
+
+    
+
+
     
     logic m0_read, m0_write, m0_waitrequest, m0_readvalid;
     assign m0_waitrequest = 1'b0;
     assign m0_readvalid = 1'b1;
     logic [31:0] rendered_regaddr, reg_readdata, m0_writedata, m0_addr;
-	assign rendered_regaddr = m0_addr>>2;
-    regfile rf0 (
-        .clock(pll_clk), .ctrl_writeEnable(m0_write), .ctrl_reset(m0_sys_rst),
-        .ctrl_writeReg(rendered_regaddr), .ctrl_readRegA(rendered_regaddr), .ctrl_readRegB(),
-        .data_writeReg(m0_writedata),
-        .data_readRegA(reg_readdata), .data_readRegB(),
-		  .r0(r0), .r1(r1), .r2(r2), .r3(r3)
-        );
+    assign rendered_regaddr = m0_addr>>2;
+   regfile rf0 (
+       .clock(pll_clk), .ctrl_writeEnable(m0_write), .ctrl_reset(m0_sys_rst),
+       .ctrl_writeReg(rendered_regaddr), .ctrl_readRegA(rendered_regaddr), .ctrl_readRegB(),
+       .data_writeReg(m0_writedata),
+       .data_readRegA(reg_readdata), .data_readRegB(),
+           .r0(r0), .r1(r1), .r2(r2), .r3(r3)
+   );
+//    regfile rf0 (
+//        .clock(pll_clk), .ctrl_writeEnable(m1_write), .ctrl_reset(m0_sys_rst),
+//        .ctrl_writeReg('b0), .ctrl_readRegA(rendered_regaddr), .ctrl_readRegB(),
+//        .data_writeReg(m1_addr),
+//        .data_readRegA(reg_readdata), .data_readRegB(),
+//            .r0(r0), .r1(r1), .r2(r2), .r3(r3)
+//    );
 
-	
-	
+
+
     SRAM_SC periph (
         .clock_bridge_0_out_clk_clk                   (pll_clk),                   //  output,   width = 1,            clock_bridge_0_out_clk.clk
         .clk_clk                                      (clk),                                      //   input,   width = 1,                               clk.clk
@@ -115,7 +123,7 @@ module pipeline_ram_top (
         .master_0_master_waitrequest                  (m0_waitrequest),                  //   input,   width = 1,                                  .waitrequest
         .master_0_master_readdatavalid                (m0_readvalid),                //   input,   width = 1,                                  .readdatavalid
         .master_0_master_byteenable                   ()                    //  output,   width = 4,                                  .byteenable
-        );
+    );
 
 
 endmodule: pipeline_ram_top
