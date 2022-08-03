@@ -38,14 +38,21 @@ module top (
         end
     end
 
-    ram1 u0 (
-        .data    (writedata),    //   input,  width = 32,    data.datain
-        .q       (m1_readdata),       //  output,  width = 32,       q.dataout
-        .address (access_addr), //   input,  width = 12, address.address
-        .wren    (ram_wren),    //   input,   width = 1,    wren.wren
-        .clock   (pll_clk)    //   input,   width = 1,   clock.clk
+    // ram1 u0 (
+    //     .data    (writedata),    //   input,  width = 32,    data.datain
+    //     .q       (m1_readdata),       //  output,  width = 32,       q.dataout
+    //     .address (access_addr), //   input,  width = 12, address.address
+    //     .wren    (ram_wren),    //   input,   width = 1,    wren.wren
+    //     .clock   (pll_clk)    //   input,   width = 1,   clock.clk
+    // );
+    ram2 u0 (
+        .data      (writedata),      //   input,  width = 32,      data.datain
+        .q         (m1_readdata),         //  output,  width = 32,         q.dataout
+        .wraddress (access_addr), //   input,   width = 5, wraddress.wraddress
+        .rdaddress (access_addr), //   input,   width = 5, rdaddress.rdaddress
+        .wren      (ram_wren),      //   input,   width = 1,      wren.wren
+        .clock     (pll_clk)      //   input,   width = 1,     clock.clk
     );
-
 
     
 
@@ -73,20 +80,20 @@ module top (
     assign m0_readvalid = 1'b1;
     logic [31:0] rendered_regaddr, reg_readdata, m0_writedata, m0_addr;
     assign rendered_regaddr = m0_addr>>2;
-   regfile rf0 (
-       .clock(pll_clk), .ctrl_writeEnable(m0_write), .ctrl_reset(m0_sys_rst),
-       .ctrl_writeReg(rendered_regaddr), .ctrl_readRegA(rendered_regaddr), .ctrl_readRegB(),
-       .data_writeReg(m0_writedata),
-       .data_readRegA(reg_readdata), .data_readRegB(),
-           .r0(r0), .r1(r1), .r2(r2), .r3(r3)
-   );
-//    regfile rf0 (
-//        .clock(pll_clk), .ctrl_writeEnable(m1_write), .ctrl_reset(m0_sys_rst),
-//        .ctrl_writeReg('b0), .ctrl_readRegA(rendered_regaddr), .ctrl_readRegB(),
-//        .data_writeReg(m1_addr),
-//        .data_readRegA(reg_readdata), .data_readRegB(),
-//            .r0(r0), .r1(r1), .r2(r2), .r3(r3)
-//    );
+    regfile rf0 (
+        .clock(pll_clk), .ctrl_writeEnable(m0_write), .ctrl_reset(m0_sys_rst),
+        .ctrl_writeReg(rendered_regaddr), .ctrl_readRegA(rendered_regaddr), .ctrl_readRegB(),
+        .data_writeReg(m0_writedata),
+        .data_readRegA(reg_readdata), .data_readRegB(),
+            .r0(r0), .r1(r1), .r2(r2), .r3(r3)
+    );
+    // regfile rf0 (
+    //     .clock(pll_clk), .ctrl_writeEnable(m1_write), .ctrl_reset(m0_sys_rst),
+    //     .ctrl_writeReg('b0), .ctrl_readRegA(rendered_regaddr), .ctrl_readRegB(),
+    //     .data_writeReg(m1_addr),
+    //     .data_readRegA(reg_readdata), .data_readRegB(),
+    //         .r0(r0), .r1(r1), .r2(r2), .r3(r3)
+    // );
 
 
 
